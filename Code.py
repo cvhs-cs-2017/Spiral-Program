@@ -1,49 +1,54 @@
 import turtle
 wn = turtle.Screen()
 
+p = 10  #this can change the size of the initial square
+y = 5 #this changes the distance between the lines of the spiral
+
 hi = turtle.Turtle()
 hi.speed(0)
-a = -15
-b = 15
+a = -p
+b = p
 hi.pu()
 hi.goto(a,b)
 
-c = 15
-d = 15
+
+c = p
+d = p
+
 hi.pd()
 hi.goto(c,d)
 
-e = 15
-f = -15
+e = p
+f = -p
 hi.goto(e,f)
 
-g = -15
-h = -15
+g = -p
+h = -p
 hi.goto(g,h)
 
-for i in range(50):
+for i in range(100):
   x = hi.towards(a,b)
   hi.setheading(x)
   hi.goto(a,b)
-  hi.fd(7)
+  hi.fd(y)
   a = hi.xcor()
   b = hi.ycor()
   x = hi.towards(c,d)
   hi.seth(x)
   hi.goto(c,d)
-  hi.fd(7)
+  hi.fd(y)
   c = hi.xcor()
   d = hi.ycor()
   x = hi.towards(e,f)
   hi.seth(x)
   hi.goto(e,f)
-  hi.fd(7)
+  hi.fd(y)
   e = hi.xcor()
   f = hi.ycor()
   x = hi.towards(g,h)
   hi.seth(x)
   hi.goto(g,h)
-  hi.fd(7)
+  hi.fd(y)
   g = hi.xcor()
   h = hi.ycor()
 
